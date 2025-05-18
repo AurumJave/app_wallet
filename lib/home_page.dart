@@ -1,8 +1,16 @@
+import 'package:app_wallet/bottom_nav_bar.dart';
+import 'package:app_wallet/category_tab.dart';
 import 'package:flutter/material.dart';
+import 'package:app_wallet/dashboard_tab.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -10,18 +18,20 @@ class HomePage extends StatelessWidget {
       child: Scaffold(
         body: const TabBarView(
           children: [
-            Icon(Icons.settings),
+            DashboardTab(),
+            CategoryTab(),
             Icon(Icons.settings),
             Icon(Icons.settings),
           ],
         ),
-        bottomNavigationBar: BottomAppBar(
-          padding: EdgeInsets.only(bottom: MediaQuery.sizeOf(context).height * 0.01),
-          height: MediaQuery.sizeOf(context).height * 0.1,
-          color: const Color.fromARGB(255, 106, 127, 147),
-          child: SizedBox(
-            width: MediaQuery.sizeOf(context).height * 0.8,
-            child: TabBar(
+        bottomNavigationBar: BottomNavBar()/*SafeArea( child: 
+          BottomAppBar(
+            padding: EdgeInsets.only(bottom: MediaQuery.sizeOf(context).height * 0.01),
+            height: MediaQuery.sizeOf(context).height * 0.1,
+            color: const Color.fromARGB(255, 106, 127, 147),
+            child: SizedBox(
+              width: MediaQuery.sizeOf(context).height * 0.8,
+              child: TabBar(
                 tabs: [
                   //SizedBox(
                   //  height: 23,
@@ -34,8 +44,9 @@ class HomePage extends StatelessWidget {
                 ],
               ),
           ) 
-        ),
+        ),),*/
       ),
     );
   }
 }
+

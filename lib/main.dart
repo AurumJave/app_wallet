@@ -1,4 +1,5 @@
 import 'package:app_wallet/home_page.dart';
+import 'package:app_wallet/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -56,9 +57,9 @@ class _MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => const HomePage(),
-        '/plant_page': (context) => const HomePage(),
-        '/graph_popup': (context) => const HomePage(),
+        '/': (context) => const LoginPage(),
+        '/HomePage': (context) => const HomePage(),
+        '/HomePage/Setup': (context) => const HomePage(),
         '/goals_page': (context) => const HomePage(),
         '/edit_property_page': (context) => const HomePage(),
       },
