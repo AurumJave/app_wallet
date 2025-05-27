@@ -47,36 +47,64 @@ class CategoryTab extends StatelessWidget {
           const SizedBox(height: 60),
           const Center(
             child: Text(
-              "TUS GASTOS",
+              "Categorías de Gastos",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
           ),
-          const SizedBox(height: 450),//32),
-           Row(
-            spacing: 20,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children:[
-              ElevatedButton(onPressed: () => showGoalConfig(context, 0), 
-                    style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(horizontal: 2),
-                      minimumSize: const Size(40, 40), 
-                      alignment: Alignment.center,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    child: Icon(Icons.minimize, color: Colors.black)),
-                    ElevatedButton(onPressed: () => showGoalConfig(context, 1), 
-                    style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(horizontal: 2),
-                      minimumSize: const Size(40, 40), 
-                      alignment: Alignment.center,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    child: Icon(Icons.add, color: Colors.black)),
-            ]),
+          SizedBox(height: 20),
+          Container(
+            decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(5)), color: Colors.white,),
+            height: 400,
+            width: 260,
+            child: Column(children: [
+              SizedBox(height: 20),
+              Text("Comida: 112,000", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12),),
+              StatsSplitter(),
+              Text("Bebidas: 4,200", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12),),
+              StatsSplitter(),
+              Text("Salidas: 54,000", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12),),
+            ],)
+          ),//32),
+          const SizedBox(height: 25,),
+          SizedBox(
+          height: 50,
+          width: 240,
+          //decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(5)), color: Color(0xff6A7F93),),
+          child: Row(
+          spacing: 20,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children:[
+            ElevatedButton(onPressed: () => showGoalConfig(context, 0), 
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(horizontal: 2),
+                minimumSize: const Size(40, 40), 
+                alignment: Alignment.center,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              child: Icon(Icons.minimize, color: Colors.black)),
+            ElevatedButton(onPressed: () => {}, 
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(horizontal: 2),
+                minimumSize: const Size(40, 40), 
+                alignment: Alignment.center,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              child: Icon(Icons.category, color: Colors.black)),
+            ElevatedButton(onPressed: () => showGoalConfig(context, 1), 
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(horizontal: 2),
+                minimumSize: const Size(40, 40), 
+                alignment: Alignment.center,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              child: Icon(Icons.add, color: Colors.black)),
+          ]),)
             
           // PieChart(
           //   dataMap: dataMap,

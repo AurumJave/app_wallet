@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 
+List<String> items = [
+  "Comida",
+  "Bebidas",
+  "Salidas"
+];
+
 class CategoryAlertDialog extends StatelessWidget {
   const CategoryAlertDialog({super.key, required this.estado});
   final int estado;
@@ -18,7 +24,17 @@ class CategoryAlertDialog extends StatelessWidget {
             const TextField(
             decoration: InputDecoration(hintText: "Cantidad"),
             ),
-          ])
+            SizedBox(height: 20),
+            Text("Categoría:"),
+            SizedBox(height: 5),
+            DropdownMenu(dropdownMenuEntries: 
+              List.generate(
+                3,//bottomNavItems.length,
+                (index) { 
+                    return DropdownMenuEntry(value: index, label: items[index]);
+                }
+              ),
+            )])
           )),
           actions: <Widget>[
             TextButton(
