@@ -1,5 +1,12 @@
-AlertDialog( 
-          title: Text(existing ? 'Modificar Meta' : 'Crear Meta'),
+import 'package:flutter/material.dart';
+
+class CategoryAlertDialog extends StatelessWidget {
+  const CategoryAlertDialog({super.key, required this.estado});
+  final int estado;
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog( 
+          title: Text('Registrar gasto'),
           shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(2))),
           content: PreferredSize(
@@ -9,16 +16,7 @@ AlertDialog(
               IconButton(icon: Icon(Icons.question_mark, color: Colors.grey.shade400), onPressed: () => {})
             ),
             const TextField(
-            decoration: InputDecoration(hintText: "Nombre"),
-            ),
-            const TextField(
-            decoration: InputDecoration(hintText: "Valor Máximo"),
-            ),
-            const TextField(
-            decoration: InputDecoration(hintText: "Valor Mínimo"),
-            ),
-            const TextField(
-            decoration: InputDecoration(hintText: "etc"),
+            decoration: InputDecoration(hintText: "Cantidad"),
             ),
           ])
           )),
@@ -32,9 +30,14 @@ AlertDialog(
             TextButton(
               child: const Text('Guardar'),
               onPressed: () {
+                ///////////////
+                //Base de datos plssssss - estado indica 0 si es perdida, 1 si es ganancia xd
+                /////////////////////
                 Navigator.of(context).pop();
                 // Handle the submit action
               },
             ),
           ],
           );
+  }
+}

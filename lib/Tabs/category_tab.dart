@@ -1,3 +1,4 @@
+import 'package:app_wallet/Tabs/AlertDialogs/category_alert_dialog.dart';
 import 'package:app_wallet/stats_display.dart';
 import 'package:app_wallet/stats_splitter.dart';
 import 'package:flutter/material.dart';
@@ -15,14 +16,15 @@ class MyWidget extends StatelessWidget {
 class CategoryTab extends StatelessWidget {
   const CategoryTab({super.key});
 
-  // void showGoalConfig(BuildContext context) {
-  //   showDialog(context: context, builder: (BuildContext context) {
-  //       return const StatModifyDialog(existing: false);
-  //     },);
-  // }
+  void showGoalConfig(BuildContext context, final int estado) {
+    showDialog(context: context, builder: (BuildContext context) {
+        return const CategoryAlertDialog(estado: 1);
+      },);
+  }
   
   @override
   Widget build(BuildContext context) {
+
     final dataMap = {
       "Email": 20.0,
       "Direct": 25.0,
@@ -40,7 +42,6 @@ class CategoryTab extends StatelessWidget {
     ];
 
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Column(
         children: [
           const SizedBox(height: 60),
@@ -50,31 +51,31 @@ class CategoryTab extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
           ),
-          const SizedBox(height: 150),//32),
+          const SizedBox(height: 450),//32),
            Row(
             spacing: 20,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children:[
-              ElevatedButton(onPressed: () =>{}, 
+              ElevatedButton(onPressed: () => showGoalConfig(context, 0), 
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(horizontal: 2),
-                      minimumSize: const Size(10, 40), 
+                      minimumSize: const Size(40, 40), 
                       alignment: Alignment.center,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
                     child: Icon(Icons.minimize, color: Colors.black)),
-                    ElevatedButton(onPressed: () =>{}, 
+                    ElevatedButton(onPressed: () => showGoalConfig(context, 1), 
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(horizontal: 2),
-                      minimumSize: const Size(10, 40), 
+                      minimumSize: const Size(40, 40), 
                       alignment: Alignment.center,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                    child: Icon(Icons.minimize, color: Colors.black)),
+                    child: Icon(Icons.add, color: Colors.black)),
             ]),
             
           // PieChart(
