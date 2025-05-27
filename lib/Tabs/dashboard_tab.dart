@@ -141,7 +141,32 @@ class DashboardTab extends StatelessWidget {
                     ),
                   ],
                 ),
-          )]),),
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                Container(
+                  width: 175,
+                  height: 20,
+                  decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(4)), color: Colors.white,),
+                  child: Center(child: Text("cerveza: 7,00", textAlign: TextAlign.left, style: TextStyle(fontWeight: FontWeight.bold),)),
+                ),
+                SizedBox(height: 20),
+                Container(
+                  width: 175,
+                  height: 20,
+                  decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(4)), color: Colors.white,),
+                  child: Center(child: Text("empanada: 3,500", textAlign: TextAlign.left, style: TextStyle(fontWeight: FontWeight.bold),)),
+                ),
+                SizedBox(height: 20),
+                Container(
+                  width: 175,
+                  height: 20,
+                  decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(4)), color: Colors.white,),
+                  child: Center(child: Text("Almuercito: 13,500", textAlign: TextAlign.left, style: TextStyle(fontWeight: FontWeight.bold),)),
+                )
+              ],)
+          ]),),
           const SizedBox(height: 16),
           // Gastos Mayores + Progress
           Container( 
@@ -166,17 +191,24 @@ class DashboardTab extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 8),
-                  const Align(
-                    alignment: Alignment.center,
-                    child: Column(
+                  Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Gastos Mayores", style: TextStyle(color: Colors.white)),
-                        Text("• Comida", style: TextStyle(color: Colors.white)),
-                        Text("• Ocio", style: TextStyle(color: Colors.white)),
+                        Container(
+                          width: 225,
+                          height: 20,
+                          decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(4)), color: Colors.white,),
+                          child: Center(child: Text("Categoría más gastada: bebidas", textAlign: TextAlign.left, style: TextStyle(fontWeight: FontWeight.bold),)),
+                        ),
+                        SizedBox(height: 20),
+                        Container(
+                          width: 225,
+                          height: 20,
+                          decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(4)), color: Colors.white,),
+                          child: Center(child: Text("Ahorros mensuales: 10,000", textAlign: TextAlign.left, style: TextStyle(fontWeight: FontWeight.bold),)),
+                        ),
                       ],
                     ),
-                  ),
                 ],
               ),
             ),
