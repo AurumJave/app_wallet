@@ -1,11 +1,14 @@
-import 'package:app_wallet/home_page.dart';
-import 'package:app_wallet/login_page.dart';
+import 'package:app_wallet/HomePage/home_page.dart';
+//import 'package:app_wallet/HomePage/login_page.dart';
+//import 'package:app_wallet/HomePage/register_page.dart';
+import 'package:app_wallet/HomePage/welcome_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   final runnableApp = _buildRunnableApp(
     isWeb: true,
     webAppWidth: 380.0,
@@ -57,11 +60,12 @@ class _MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => const LoginPage(),
-        '/HomePage': (context) => const HomePage(),
-        '/HomePage/Setup': (context) => const HomePage(),
-        '/goals_page': (context) => const HomePage(),
-        '/edit_property_page': (context) => const HomePage(),
+        '/': (context) => HomePage(),
+        //'/login': (context) => const LoginPage(),
+        //'/register': (context) => const RegisterPage(),
+        // '/HomePage': (context) => HomePage(
+        //       userData: ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>,
+        //     ),
       },
     );
   }
